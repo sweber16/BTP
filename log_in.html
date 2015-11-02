@@ -1,0 +1,66 @@
+<!doctype html>
+<html>
+  <head>
+   <meta charset='utf-8'>
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <!-- Latest compiled and minified CSS -->
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+   <link rel="stylesheet" href="styles.css">
+   <style>
+      /* Stops navbar from overlaying on content */
+      body {
+         padding-top: 65px; 
+      }
+   </style>
+   <title>Log In TirboContracts</title>
+</head>
+<body>
+<container>
+          <?php
+          include('login.php'); // Includes Login Script
+
+          if(isset($_SESSION['login_user'])){
+          header("location: profile.php");
+          }
+          ?>
+          <!DOCTYPE html>
+          <html>
+          <head>
+          <title>Login TirboContracts</title>
+          <link href="style.css" rel="stylesheet" type="text/css">
+          </head>
+          <body>
+          <div id="main">
+          <h1>TirboContract Login</h1>
+          <div id="login">
+          <form action="" method="post">
+          <label>UserName :</label>
+          <input id="name" name="username" placeholder="username" type="text">
+          <label>Password :</label>
+          <input id="password" name="password" placeholder="**********" type="password">
+          <input name="submit" type="submit" value=" Login ">
+            </div>
+          <!---Enter log_in.php connection here-->
+          <span><?php echo $error; ?></span>
+          </form>
+          </div>
+          </div>
+          <br>
+          <br>
+          <!--Creating a button for going back to index page-->
+            <div class="back button">
+            <FORM METHOD="LINK" ACTION="/index.html">
+             <button type="submit" name="back button">Back</button>
+          </body>
+          </html>
+          </container>
+</body>
+<!-- Moving "scripts" to the bottom to speed up page loading. 
+It's better that users see the raw HTML before any JavaScript loads. -->
+   <!-- jQuery 1.11.3 -->
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+   <!-- Bootstrap JS 3.3.5 -->
+   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+   <script src="script.js"></script>
+</html>
